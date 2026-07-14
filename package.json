@@ -1,0 +1,18 @@
+{
+  "name": "boostr-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "India's Startup Ecosystem Platform — Monorepo",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "start:server": "cd server && npm start",
+    "install:server": "cd server && npm install",
+    "install:client": "cd client && npm install",
+    "install:all": "npm run install:server && npm run install:client"
+  },
+  "dependencies": {
+    "axios": "^1.17.0",
+    "react-router-dom": "^7.17.0"
+  }
+}
