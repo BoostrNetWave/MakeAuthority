@@ -1,10 +1,12 @@
 export default function OAuthButtons() {
   const handleGoogle = () => {
-    window.location.href = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/google`
+    const baseUrl = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace(/\/api$/, '');
+    window.location.href = `${baseUrl}/api/auth/google`
   }
 
   const handleLinkedIn = () => {
-    window.location.href = `${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/api/auth/linkedin`
+    const baseUrl = (import.meta.env.VITE_API_URL || 'http://localhost:5000/api').replace(/\/api$/, '');
+    window.location.href = `${baseUrl}/api/auth/linkedin`
   }
 
   return (
