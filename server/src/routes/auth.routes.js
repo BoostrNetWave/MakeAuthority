@@ -67,10 +67,10 @@ router.get("/google",
 )
 
 router.get("/google/callback",
-  passport.authenticate("google", { session: false, failureRedirect: `${process.env.CLIENT_ORIGIN}/login?error=google_failed` }),
+  passport.authenticate("google", { session: false, failureRedirect: `${process.env.CLIENT_ORIGIN?.replace(/\/$/, '')}/login?error=google_failed` }),
   (req, res) => {
     const { code } = req.user
-    return res.redirect(`${process.env.CLIENT_ORIGIN}/auth/callback?code=${code}&provider=google`)
+    return res.redirect(`${process.env.CLIENT_ORIGIN?.replace(/\/$/, '')}/auth/callback?code=${code}&provider=google`)
   }
 )
 
@@ -80,10 +80,10 @@ router.get("/linkedin",
 )
 
 router.get("/linkedin/callback",
-  passport.authenticate("linkedin", { session: false, failureRedirect: `${process.env.CLIENT_ORIGIN}/login?error=linkedin_failed` }),
+  passport.authenticate("linkedin", { session: false, failureRedirect: `${process.env.CLIENT_ORIGIN?.replace(/\/$/, '')}/login?error=linkedin_failed` }),
   (req, res) => {
     const { code } = req.user
-    return res.redirect(`${process.env.CLIENT_ORIGIN}/auth/callback?code=${code}&provider=linkedin`)
+    return res.redirect(`${process.env.CLIENT_ORIGIN?.replace(/\/$/, '')}/auth/callback?code=${code}&provider=linkedin`)
   }
 )
 
